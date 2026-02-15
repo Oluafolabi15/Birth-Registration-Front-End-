@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-midnight: #111827;
+  --color-indigo: #4C3F91;
+  --color-periwinkle: #9D7CFF;
+  --color-snow: #FFFFFF;
+  --color-onyx: #121212;
+  --color-bg: #F8F9FB;
+  --color-border: #E5E7EB;
+  --color-text: #111827;
+  --color-success: #16A34A;
+  --color-danger: #DC2626;
+  --color-warning: #D97706;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Global subtle transitions for a premium feel */
+* {
+  transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease, transform 150ms ease;
+}
+
+/* Soft page fade-in */
+.page-fade-in {
+  animation: pageFade 240ms ease both;
+}
+@keyframes pageFade {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Card hover micro-interaction */
+.card-hover {
+  will-change: transform, box-shadow;
+}
+.card-hover:hover {
+  box-shadow: 0 4px 14px rgba(17, 24, 39, 0.08);
+  transform: translateY(-1px);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .soft-border {
+    border-color: var(--color-border);
+  }
+  .muted {
+    color: #6B7280;
+  }
+}
